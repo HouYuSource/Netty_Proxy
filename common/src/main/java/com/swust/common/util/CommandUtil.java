@@ -47,7 +47,7 @@ public class CommandUtil {
             properties.load(new FileInputStream(filePath));
             LogUtil.debugLog(properties.toString());
         } catch (IOException e) {
-            throw new RuntimeException("Parse profile error!", e);
+            throw new RuntimeException("解析配置文件异常!",e);
         }
         return properties;
     }
@@ -70,4 +70,8 @@ public class CommandUtil {
         return Arrays.asList(replace.split(","));
     }
 
+
+    public static void main(String[] args) {
+        Properties properties = parseProfile("F:\\JavaProject\\Netty_Proxy\\client.pro");
+    }
 }
